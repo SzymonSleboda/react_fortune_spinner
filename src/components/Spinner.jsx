@@ -13,12 +13,12 @@ const Spinner = () => {
       "February",
       "April",
       "May",
-      "Ziemlich",
-      "Ziemniak",
+      "Maybe",
+      "Może",
       "Niemożliwe",
       "Możliwe",
       "Goblin",
-      "niue",
+      "Pizza Pasta",
     ],
     datasets: [
       {
