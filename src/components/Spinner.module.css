@@ -31,6 +31,7 @@
   border-top: 30px solid transparent;
   border-right: 100px solid black;
   border-bottom: 30px solid transparent;
+  border-radius: 12px;
   cursor: pointer;
 
   &:hover {
@@ -73,36 +74,166 @@
     transform: rotate(2deg);
   }
 }
-@keyframes shake-right {
-  0%,
-  100% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transform-origin: 100% 50%;
-    transform-origin: 100% 50%;
+
+:root {
+  --color: var(--yellow-5);
+  --shadow: var(--yellow-8);
+  --glare: hsl(0 0% 100% / 0.75);
+  --font-size: var(--font-size-fluid-3);
+  --transition: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-family: "Google Sans", sans-serif, system-ui;
+}
+
+button {
+  position: absolute;
+  --padding: var(--size-2);
+  padding: var(--padding);
+  border-radius: 50%;
+  text-decoration: none;
+  color: transparent;
+  position: relative;
+  transition: background 0.2s;
+  position: absolute;
+ 
+  height: 8vw;
+  width: 16vw;
+  background-color: black;
+  border: 2px 2px;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+button:hover {
+  background: green;
+  cursor: pointer;
+}
+.buttonText {
+  color: white;
+  font-size: 1.3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: font-size 0.2s;
+}
+
+
+span {
+  display: inline-block;
+  font-size: calc(var(--font-size) * 1.5);
+  font-weight: var(--font-weight-9);
+  transition: all 0.2s;
+  text-decoration: none;
+  text-shadow: calc(var(--hover) * (var(--font-size) * -0))
+      calc(var(--hover) * (var(--font-size) * 0)) var(--shadow),
+    calc(var(--hover) * (var(--font-size) * -0.02))
+      calc(var(--hover) * (var(--font-size) * 0.02)) var(--shadow),
+    calc(var(--hover) * (var(--font-size) * -0.04))
+      calc(var(--hover) * (var(--font-size) * 0.04)) var(--shadow),
+    calc(var(--hover) * (var(--font-size) * -0.06))
+      calc(var(--hover) * (var(--font-size) * 0.06)) var(--shadow),
+    calc(var(--hover) * (var(--font-size) * -0.08))
+      calc(var(--hover) * (var(--font-size) * 0.08)) var(--shadow),
+    calc(var(--hover) * (var(--font-size) * -0.1))
+      calc(var(--hover) * (var(--font-size) * 0.1)) var(--shadow);
+  /*     calc(var(--hover) * -2px) calc(var(--hover) * 2px) var(--shadow),
+      calc(var(--hover) * -3px) calc(var(--hover) * 3px) var(--shadow),
+      calc(var(--hover) * -4px) calc(var(--hover) * 4px) var(--shadow), */
+  /*     calc(var(--hover) * -5px) calc(var(--hover) * 5px) var(--shadow); */
+  transform: translate(
+    calc(var(--hover) * (var(--font-size) * 0.1)),
+    calc(var(--hover) * (var(--font-size) * -0.1))
+  );
+}
+
+button {
+  --hover: 0.4;
+  --pos: 0;
+}
+
+button:hover {
+  --hover: 1;
+  --pos: 1;
+}
+
+button:active {
+  --hover: 0;
+}
+
+button:active span:last-of-type {
+  --hover: 0;
+  --pos: 1;
+}
+
+button svg {
+  position: absolute;
+  z-index: 3;
+  width: calc(var(--font-size) * 0.5);
+  aspect-ratio: 1;
+}
+
+button svg path {
+  fill: yellow;
+}
+
+/* Animation for sparkles */
+
+button:hover svg {
+  animation: sparkle 0.75s calc((var(--delay-step) * var(--d)) * 1s) both;
+}
+
+@keyframes sparkle {
+  50% {
+    transform: translate(-50%, -50%) scale(var(--s, 1));
   }
-  10% {
-    -webkit-transform: rotate(2deg);
-    transform: rotate(2deg);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: rotate(-4deg);
-    transform: rotate(-4deg);
-  }
-  30%,
-  50%,
-  70% {
-    -webkit-transform: rotate(4deg);
-    transform: rotate(4deg);
-  }
-  80% {
-    -webkit-transform: rotate(-2deg);
-    transform: rotate(-2deg);
-  }
-  90% {
-    -webkit-transform: rotate(2deg);
-    transform: rotate(2deg);
-  }
+}
+
+button svg {
+  --delay-step: 0.15;
+  top: calc(var(--y, 50) * 1%);
+  left: calc(var(--x, 0) * 1%);
+  transform: translate(-50%, -50%) scale(0);
+}
+
+button svg:nth-of-type(1) {
+  --x: 0;
+  --y: 20;
+  --s: 1.1;
+  --d: 1;
+}
+
+button svg:nth-of-type(2) {
+  --x: 15;
+  --y: 80;
+  --s: 1.25;
+  --d: 2;
+}
+
+button svg:nth-of-type(3) {
+  --x: 45;
+  --y: 40;
+  --s: 1.1;
+  --d: 3;
+}
+
+button svg:nth-of-type(4) {
+  --x: 75;
+  --y: 60;
+  --s: 0.9;
+  --d: 2;
+}
+
+button svg:nth-of-type(5) {
+  --x: 100;
+  --y: 30;
+  --s: 0.8;
+  --d: 4;
 }
