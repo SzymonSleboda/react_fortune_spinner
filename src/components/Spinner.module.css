@@ -154,31 +154,37 @@ button {
   text-decoration: none;
   color: transparent;
   transition: background 0.2s;
-  height: 100px;
-  width: 200px;
+  height: 50px;
+  width: 100px;
   background-color: black;
   border: 2px 2px;
   -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-  @media screen and (min-width: 480px) {
-  }
 }
 
+@media screen and (min-width: 768px) {
+  button {
+    height: 100px;
+    width: 200px;
+  }
+}
 button:hover {
   background: green;
   cursor: pointer;
 }
 .buttonText {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   transition: font-size 0.2s;
 }
-
-.button:hover .buttonText {
-  font-size: 1.5rem;
+@media screen and (min-width: 768px) {
+  .buttonText {
+    font-size: 1.3rem;
+  }
 }
+
 span {
   display: inline-block;
   font-size: calc(var(--font-size) * 1.5);
