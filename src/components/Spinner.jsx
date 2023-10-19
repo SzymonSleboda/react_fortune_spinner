@@ -43,7 +43,7 @@ const Spinner = () => {
   return (
     <div className={s.container}>
       <Pie className={s.pie} data={state} onElementsHover={handlePointHover} />
-      <div className={`${s.arrow}`}></div>
+      <div className={s.arrow}></div>
       <button type="button">
         <span className={s.buttonText}>Zakręć!</span>
         <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">

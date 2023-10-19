@@ -1,13 +1,8 @@
-.container {
-  position: absolute;
-  top: 0;
-  left: 0;
+html,
+body {
   height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  -webkit-tap-highlight-color: transparent;
-  align-items: center;
+  margin: 0;
+  padding: 0;
   background: rgb(251, 247, 63);
   background: radial-gradient(
     circle,
@@ -15,18 +10,42 @@
     rgba(5, 23, 3, 1) 100%
   );
 }
+.container {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+}
 
 .pie {
-  width: 80%;
-  margin: 0 auto;
   -webkit-tap-highlight-color: transparent;
   &:hover {
     cursor: pointer;
   }
 }
 @media screen and (min-width: 768px) {
-  .pie {
+  .container {
     width: 650px;
+  }
+}
+
+
+.spinning {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
