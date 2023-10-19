@@ -37,15 +37,24 @@ body {
 }
 
 .spinning {
-  animation: spin 4s linear infinite;
+  animation: spin 5s linear, spin-decelerate 1s ease-in 5s forwards;
 }
 
 @keyframes spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-decelerate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(370deg); 
   }
 }
 

@@ -46,8 +46,8 @@ const Spinner = () => {
   const chartOptions = {
     elements: {
       arc: {
-        borderColor: "black", 
-        borderWidth: 2, 
+        borderColor: "black",
+        borderWidth: 2,
       },
     },
   };
