@@ -1,49 +1,8 @@
-import s from "./Spinner.module.css";
-import { Chart, ArcElement, Tooltip } from "chart.js";
-import { Pie } from "react-chartjs-2";
-import "animate.css";
-Chart.register(ArcElement, Tooltip);
-const handlePointHover = (event) => {
-  event.target.style.cursor = "pointer";
-};
-const Spinner = () => {
-  const state = {
-    labels: [
-      "January",
-      "February",
-      "April",
-      "May",
-      "Maybe",
-      "Może",
-      "Niemożliwe",
-      "Możliwe",
-      "Goblin",
-      "Pizza Pasta",
-    ],
-    datasets: [
-      {
-        backgroundColor: [
-          "#B21F00",
-          "#C9DE00",
-          "#2FDE00",
-          "#00A6B4",
-          "#6800B4",
-        ],
-        hoverBackgroundColor: [
-          "#501800",
-          "#4B5000",
-          "#175000",
-          "#003350",
-          "#35014F",
-        ],
-        data: [20, 20, 20, 20, 20, 20, 20, 20, 20, 20],
-      },
-    ],
-  };
+import s from "./Button.module.css";
+
+const Button = () => {
   return (
-    <div className={s.container}>
-      <Pie className={s.pie} data={state} onElementsHover={handlePointHover} />
-      <div className={s.arrow}></div>
+    <div>
       <button type="button">
         <span className={s.buttonText}>Zakręć!</span>
         <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,4 +39,4 @@ const Spinner = () => {
     </div>
   );
 };
-export default Spinner;
+export default Button;
