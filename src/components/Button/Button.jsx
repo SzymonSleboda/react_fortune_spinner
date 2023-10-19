@@ -1,9 +1,12 @@
 import s from "./Button.module.css";
 
-const Button = () => {
+const Button = ({startSpin}) => {
+  const handleButtonClick = () => {
+    startSpin();
+  };
   return (
     <div>
-      <button type="button">
+      <button type="button" onClick={handleButtonClick}>
         <span className={s.buttonText}>Zakręć!</span>
         <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

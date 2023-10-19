@@ -8,7 +8,7 @@ const handlePointHover = (event) => {
   event.target.style.cursor = "pointer";
 };
 
-const Spinner = () => {
+const Spinner = ({ isSpinning }) => {
   const state = {
     labels: [
       "January",
@@ -55,7 +55,7 @@ const Spinner = () => {
   return (
     <div className={s.container}>
       <Pie
-        className={s.pie}
+        className={`${s.pie} ${isSpinning ? s.spinning : ""}`}
         options={chartOptions}
         data={state}
         onElementsHover={handlePointHover}
