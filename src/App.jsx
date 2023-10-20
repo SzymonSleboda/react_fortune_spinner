@@ -7,11 +7,9 @@ export const App = () => {
 
   const startSpin = () => {
     setIsSpinning(true);
-
-    // Po 5 sekundach zatrzymaj obrót
     setTimeout(() => {
       setIsSpinning(false);
-    }, 5000);
+    }, 10000);
   };
   return (
     <div>

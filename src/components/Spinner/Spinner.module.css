@@ -35,9 +35,8 @@ body {
     width: 600px;
   }
 }
-
 .spinning {
-  animation: spin 5s linear, spin-decelerate 1s ease-in 5s forwards;
+  animation: spin 100ms linear;
 }
 
 @keyframes spin {
@@ -45,16 +44,7 @@ body {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin-decelerate {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(370deg); 
+    transform: rotate(calc(360deg * var(--rotation)));
   }
 }
 
