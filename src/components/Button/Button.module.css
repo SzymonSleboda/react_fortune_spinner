@@ -42,10 +42,10 @@ button:hover {
 }
 
 .buttonText {
-  /* color: #f3f6c2;
+  color: #f3f6c2;
   font-size: calc(1.2em + 1vw);
   font-family: "Titan One", sans-serif;
-  transition: font-size 0.2s; */
+  transition: font-size 0.2s;
 }
 
 span {
