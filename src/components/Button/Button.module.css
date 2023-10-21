@@ -7,17 +7,33 @@
 }
 
 .button {
-  border-radius: 50%;
+  /* border-radius: 50%;
   text-decoration: none;
   color: transparent;
-  transition: 0.2s;
-
-  width: 30vw;
-  height: 10vh;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px #F3F6C2;
+  transition: all 0.3s ease-in-out 0s;
+  
   background-color: #9b96ef;
   border: 1px 1px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; */
+  width: 30vw;
+  height: 10vh;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #9b96ef;
+
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px #9b96ef;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
 }
+
 @media screen and (min-width: 768px) {
   .button {
     width: 25vw;
@@ -34,7 +50,7 @@
   }
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
   -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
@@ -64,3 +80,45 @@ span {
   --font-size: var(--font-size-fluid-3);
   --transition: 0.2s;
 }
+
+  
+  .button:hover, .button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+  .button:hover::before, button:focus::before {
+    opacity: 1;
+  }
+  
+  .button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #F3F6C2;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+  .button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 350px;
+      height: 200px;
+      opacity: 0;
+    }
+  }
