@@ -6,7 +6,6 @@ Chart.register(ArcElement, Tooltip, CategoryScale);
 
 const Spinner = ({ isSpinning }) => {
   const [rotation, setRotation] = useState(0);
-
   useEffect(() => {
     if (isSpinning) {
       const minDegrees = 1080;
@@ -61,8 +60,8 @@ const Spinner = ({ isSpinning }) => {
       },
     },
     animation: {
-      duration: 4000, 
-      easing: "easeInOutCubic", 
+      duration: 1500,
+      easing: "easeInOutCubic",
     },
   };
 
