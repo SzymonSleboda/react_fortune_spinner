@@ -4,6 +4,7 @@ import Spinner from "./components/Spinner/Spinner";
 import Button from "./components/Button/Button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Container from "./components/Container/Container";
 
 export const App = () => {
   const [isSpinning, setIsSpinning] = useState(false);
@@ -32,8 +33,10 @@ export const App = () => {
 
   return (
     <div>
-      <Spinner isSpinning={isSpinning} />
-      <Button startSpin={startSpin} />
+      <Container>
+        <Spinner isSpinning={isSpinning} />
+        <Button startSpin={startSpin} />
+      </Container>
       <ToastContainer />
     </div>
   );
