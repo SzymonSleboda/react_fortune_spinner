@@ -1,18 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&family=Titan+One&display=swap");
-html,
+* {
+  box-sizing: border-box;
+}
+
 body {
-  height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 5vh 0 5vh 0;
   background: #c5c2f6;
 }
 .container {
-  position: absolute;
-  width: 85%;
-  height: 85%;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 75vw;
+  height: 75vh;
   display: flex;
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
@@ -23,16 +21,6 @@ body {
   -webkit-tap-highlight-color: transparent;
   &:hover {
     cursor: pointer;
-  }
-}
-@media screen and (min-width: 480px) {
-  .container {
-    width: 450px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    width: 600px;
   }
 }
 .spinning {
@@ -75,11 +63,6 @@ body {
     border-bottom: 30px solid transparent;
   }
 }
-/* @media screen and (min-width: 1024px) {
-  .arrow {
-    right: 22%;
-  }
-} */
 @-webkit-keyframes shake-right {
   0%,
   100% {
@@ -154,8 +137,3 @@ body {
   --font-size: var(--font-size-fluid-3);
   --transition: 0.2s;
 }
-
-* {
-  box-sizing: border-box;
-}
-/* .test{} */
