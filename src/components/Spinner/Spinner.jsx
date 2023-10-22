@@ -5,7 +5,7 @@ import s from "./Spinner.module.css";
 
 Chart.register(ArcElement, Tooltip, CategoryScale);
 
-const Spinner = ({ isSpinning, pieHeight }) => {
+const Spinner = ({ isSpinning, pieHeight, onChartClick }) => {
   const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Spinner = ({ isSpinning, pieHeight }) => {
 
       const randomRotation =
         Math.floor(Math.random() * (maxDegrees - minDegrees + 1)) + minDegrees;
-      const degreesRemainder = randomRotation % 36; 
+      const degreesRemainder = randomRotation % 36;
       const adjustedRotation = randomRotation - degreesRemainder;
 
       setRotation(adjustedRotation);
@@ -26,7 +26,9 @@ const Spinner = ({ isSpinning, pieHeight }) => {
   const handleChartClick = (event, elements) => {
     if (elements[0]) {
       const dataIndex = elements[0].index;
-      console.log("Clicked Element Data:", state.labels[dataIndex]);
+      const data = state.labels[dataIndex];
+      onChartClick(data);
+      // console.log("Clicked Element Data:", state.labels[dataIndex]);
     }
   };
   const state = {
@@ -71,16 +73,16 @@ const Spinner = ({ isSpinning, pieHeight }) => {
       },
     },
     animation: {
-      duration: 1000,
+      duration: 4000,
       // easing: "easeInOutCubic",
     },
     onClick: handleChartClick,
     plugins: {
       legend: {
-        display: false, 
+        display: false,
       },
       tooltip: {
-        enabled: false, 
+        enabled: false,
       },
     },
   };

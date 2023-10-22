@@ -13,11 +13,15 @@ export const App = () => {
   const handleChartButtonClick = () => {
     setIsSpinning(false);
     setContainerHeight("75vh");
-    notify();
   };
 
-  const notify = () =>
-    toast("Placeholder", {
+  const startSpin = () => {
+    setIsSpinning(true);
+    setContainerHeight("90vh");
+  };
+  const handleChartClick = (clickedData) => {
+    console.log(clickedData);
+    toast(`You selected: ${clickedData}`, {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -27,19 +31,16 @@ export const App = () => {
       progress: undefined,
       theme: "dark",
     });
-
-  const startSpin = () => {
-    setIsSpinning(true);
-    setContainerHeight("90vh");
   };
-
   return (
     <div>
       <Container>
-        <Spinner isSpinning={isSpinning} pieHeight={containerHeight} />
-        {isSpinning ? (
-          <ButtonChart />
-        ) : null}
+        <Spinner
+          onChartClick={handleChartClick}
+          isSpinning={isSpinning}
+          pieHeight={containerHeight}
+        />
+        {isSpinning ? <ButtonChart /> : null}
         {!isSpinning ? <Button startSpin={startSpin} /> : null}
         {isSpinning ? (
           <ResetButton onResetButtonClick={handleChartButtonClick} />
