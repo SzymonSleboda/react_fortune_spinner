@@ -6,44 +6,59 @@ import "react-toastify/dist/ReactToastify.css";
 import Container from "./components/Container/Container";
 import ButtonChart from "./components/ButtonChart/ButtonChart";
 import ResetButton from "./components/ResetButton/ResetButton";
+import ReactConfetti from "react-confetti";
 
 export const App = () => {
   const [isSpinning, setIsSpinning] = useState(false);
+  const [isCategorySelected, setIsCategorySelected] = useState(false);
+  const [isSpinFinished, setIsSpinFinished] = useState(false);
   const [containerHeight, setContainerHeight] = useState("75vh");
-  const handleChartButtonClick = () => {
+  const handleResetButtonClick = () => {
     setIsSpinning(false);
+    setIsSpinFinished(false);
+    setIsCategorySelected(false);
     setContainerHeight("75vh");
   };
 
   const startSpin = () => {
     setIsSpinning(true);
     setContainerHeight("90vh");
+    setTimeout(() => {
+      setIsSpinFinished(true);
+    }, 3000);
   };
   const handleChartClick = (clickedData) => {
-    console.log(clickedData);
-    toast(`You selected: ${clickedData}`, {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    if (isSpinning) {
+      toast(`You selected: ${clickedData}`, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      setIsCategorySelected(true);
+    } else {
+      return null;
+    }
   };
   return (
     <div>
+      {isCategorySelected ? (
+        <ReactConfetti size={8} numberOfPieces={300} gravity={0.03} />
+      ) : null}
       <Container>
         <Spinner
           onChartClick={handleChartClick}
           isSpinning={isSpinning}
           pieHeight={containerHeight}
         />
-        {isSpinning ? <ButtonChart /> : null}
+        {isSpinFinished ? <ButtonChart /> : null}
         {!isSpinning ? <Button startSpin={startSpin} /> : null}
         {isSpinning ? (
-          <ResetButton onResetButtonClick={handleChartButtonClick} />
+          <ResetButton onResetButtonClick={handleResetButtonClick} />
         ) : null}
       </Container>
       <ToastContainer />

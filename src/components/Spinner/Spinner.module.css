@@ -28,9 +28,6 @@ body {
     cursor: pointer;
   }
 }
-.spinning {
-  animation: spin 100ms linear;
-}
 
 @keyframes spin {
   0% {

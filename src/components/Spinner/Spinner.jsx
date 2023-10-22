@@ -90,7 +90,7 @@ const Spinner = ({ isSpinning, pieHeight, onChartClick }) => {
   return (
     <div className={s.container} style={{ height: pieHeight }}>
       <Pie
-        className={`${s.pie} ${isSpinning ? s.spinning : ""}`}
+        className={`${s.pie}`}
         options={{
           ...chartOptions,
           rotation: rotation,
