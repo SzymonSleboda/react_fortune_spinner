@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Spinner from "./components/Spinner/Spinner";
 import Button from "./components/Button/Button";
 import { ToastContainer, toast } from "react-toastify";
@@ -9,7 +9,6 @@ import ButtonChart from "./components/ButtonChart/ButtonChart";
 export const App = () => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [containerHeight, setContainerHeight] = useState("75vh");
-  const buttonRef = useRef(null);
   const handleChartButtonClick = () => {
     setIsSpinning(false);
     setContainerHeight("75vh");
@@ -38,10 +37,7 @@ export const App = () => {
       <Container>
         <Spinner isSpinning={isSpinning} pieHeight={containerHeight} />
         {isSpinning ? (
-          <ButtonChart
-            ref={buttonRef}
-            onChartButtonClick={handleChartButtonClick}
-          />
+          <ButtonChart onChartButtonClick={handleChartButtonClick} />
         ) : null}
         {!isSpinning ? <Button startSpin={startSpin} /> : null}
       </Container>
