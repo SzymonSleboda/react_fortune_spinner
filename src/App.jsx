@@ -28,7 +28,7 @@ export const App = () => {
       if (!isSpinning) {
         notify();
       }
-    }, 4000);
+    }, 10000);
   };
 
   return (

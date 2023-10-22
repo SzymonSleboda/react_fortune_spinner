@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Chart, ArcElement, Tooltip, CategoryScale } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import s from "./Spinner.module.css";
+
 Chart.register(ArcElement, Tooltip, CategoryScale);
 
 const Spinner = ({ isSpinning }) => {
@@ -17,7 +18,13 @@ const Spinner = ({ isSpinning }) => {
       setRotation(0);
     }
   }, [isSpinning]);
-
+  const handleChartClick = (event, elements) => {
+    if (elements[0]) {
+      // Jeśli istnieje wybrany element, wyświetl jego dane w konsoli
+      const dataIndex = elements[0].index;
+      console.log("Clicked Element Data:", state.labels[dataIndex]);
+    }
+  };
   const state = {
     labels: [
       "Option 1",
@@ -63,6 +70,7 @@ const Spinner = ({ isSpinning }) => {
       duration: 1500,
       easing: "easeInOutCubic",
     },
+    onClick: handleChartClick,
   };
 
   return (
