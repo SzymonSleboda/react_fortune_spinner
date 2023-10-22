@@ -1,58 +1,69 @@
 .button {
     position: absolute;
     top: 50%;
-    left: 70%;
+    left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 10vw;
+    width: 20vw;
+    height: 20vw; /* Ustawienie wysokości na taką samą wartość, jak szerokość, aby zachować przycisk okrągłym */
     -webkit-tap-highlight-color: transparent;
-    height: 3vh;
     text-transform: uppercase;
     letter-spacing: 1.3px;
     font-weight: 400;
     color: #313133;
-    background: transparent;
-    border:none;
-    border-radius: 1000px; 
+    background: #9b96ef;
+    border: 2px solid #000;
+    border-radius: 50%;
+    box-shadow: 12px 12px 24px #9b96ef;
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
-    pointer-events: none;
   }
   
   @media screen and (min-width: 768px) {
     .button {
+      width: 15vw;
+      height: 15vw;
+    }
+  }
   
-      height: 5vh;
+  @media screen and (min-width: 1200px) {
+    .button {
+      width: 10vw;
+      height: 10vw;
     }
   }
   /* @media screen and (min-width: 1024px) {
     .button {
-
+      width: 20vw;
+      height: 20vw;
     }
   }
+  
   @media screen and (min-width: 1400px) {
     .button {
- 
+      width: 15vw;
+      height: 15vw;
     }
-  }
-   */
+  } */
+  
   .button:hover {
     cursor: pointer;
     -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
     -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
     box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   }
+  
   .buttonText {
     color: #f3f6c2;
     font-family: "Titan One", sans-serif;
     transition: font-size 0.2s;
-    font-size: 7px;
-    text-align: center; 
+    font-size: 14px;
+    text-align: center;
     @media screen and (min-width: 480px) {
-      font-size: calc(0.5em + 1vw);
+      font-size: calc(1.2em + 1vw);
     }
   }
   
@@ -64,13 +75,12 @@
     --transition: 0.2s;
   }
   
-  
   .button:hover::before,
   button:focus::before {
     opacity: 1;
   }
   
-  .button::after {
+  /* .button::after {
     content: "";
     width: 30px;
     height: 30px;
@@ -80,14 +90,16 @@
     z-index: -1;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: ring_chart_mobile 1.5s infinite;
-  }
-  @media screen and (min-width: 768px) {
+    transform: translate(-50%, -50%); */
+    /* animation: ring_chart_mobile 1.5s infinite; */
+  /* } */
+  
+  /* @media screen and (min-width: 768px) {
     .button::after {
       animation: ring 1.5s infinite;
     }
   }
+  
   .button:hover::after,
   button:focus::after {
     animation: none;
@@ -102,10 +114,11 @@
     }
     100% {
       width: 400px;
-      height: 200px;
+      height: 400px;
       opacity: 0;
     }
   }
+  
   @keyframes ring_chart_mobile {
     0% {
       width: 30px;
@@ -114,8 +127,8 @@
     }
     100% {
       width: 100px;
-      height: 80px;
+      height: 100px;
       opacity: 0;
     }
   }
-  
+   */

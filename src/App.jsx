@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Container from "./components/Container/Container";
 import ButtonChart from "./components/ButtonChart/ButtonChart";
+import ResetButton from "./components/ResetButton/ResetButton";
 
 export const App = () => {
   const [isSpinning, setIsSpinning] = useState(false);
@@ -37,9 +38,12 @@ export const App = () => {
       <Container>
         <Spinner isSpinning={isSpinning} pieHeight={containerHeight} />
         {isSpinning ? (
-          <ButtonChart onChartButtonClick={handleChartButtonClick} />
+          <ButtonChart />
         ) : null}
         {!isSpinning ? <Button startSpin={startSpin} /> : null}
+        {isSpinning ? (
+          <ResetButton onResetButtonClick={handleChartButtonClick} />
+        ) : null}
       </Container>
       <ToastContainer />
     </div>

@@ -71,21 +71,27 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .arrow {
-    right: 15%;
+    right: 12%; border-right: 150px solid black;
   }
 }
 @media screen and (min-width: 1400px) {
   .arrow {
-    right: 20%;
+    right: 15%;
     border-right: 150px solid black;
   }
 }
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1600px) {
   .arrow {
-    right: 25%;
+    right: 17%;
+    border-right: 200px solid black;
+  }
+}@media screen and (min-width: 1800px) {
+  .arrow {
+    right: 23%;
     border-right: 200px solid black;
   }
 }
+
 @-webkit-keyframes shake-right {
   0%,
   100% {
