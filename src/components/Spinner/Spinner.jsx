@@ -71,7 +71,7 @@ const Spinner = ({ isSpinning, pieHeight }) => {
       },
     },
     animation: {
-      duration: 6000,
+      duration: 1000,
       // easing: "easeInOutCubic",
     },
     onClick: handleChartClick,
