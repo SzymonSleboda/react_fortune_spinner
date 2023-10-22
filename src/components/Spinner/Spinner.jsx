@@ -71,18 +71,18 @@ const Spinner = ({ isSpinning, pieHeight }) => {
       },
     },
     animation: {
-      duration: 1500,
+      duration: 6000,
       // easing: "easeInOutCubic",
     },
     onClick: handleChartClick,
-    // plugins: {
-    //   legend: {
-    //     display: false, // Ukryj etykiety
-    //   },
-    //   tooltip: {
-    //     enabled: false, // Wyłącz tooltip
-    //   },
-    // },
+    plugins: {
+      legend: {
+        display: false, 
+      },
+      tooltip: {
+        enabled: false, 
+      },
+    },
   };
 
   return (
