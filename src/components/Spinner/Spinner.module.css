@@ -22,7 +22,6 @@ body {
   -webkit-tap-highlight-color: transparent;
   align-items: center;
 }
-/* 90vh */
 .pie {
   -webkit-tap-highlight-color: transparent;
   &:hover {
@@ -80,7 +79,8 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .arrow {
-    right: 12%; border-right: 150px solid #500010;
+    right: 12%;
+    border-right: 150px solid #500010;
   }
 }
 @media screen and (min-width: 1400px) {
