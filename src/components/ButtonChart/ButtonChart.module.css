@@ -15,10 +15,8 @@
     font-weight: 400;
     color: #313133;
     background: #9b96ef;
-
     border: 2px solid #000; 
     border-radius: 1000px; 
-
     box-shadow: 12px 12px 24px #9b96ef;
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;

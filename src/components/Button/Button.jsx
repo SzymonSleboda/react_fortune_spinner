@@ -7,7 +7,7 @@ const Button = ({ startSpin }) => {
   return (
     <div className={s.button_container}>
       <button type="button" className={s.button} onClick={handleButtonClick}>
-        <span className={s.buttonText}>Zakręć!</span>
+        <span className={s.buttonText}>Spin!</span>
       </button>
     </div>
   );

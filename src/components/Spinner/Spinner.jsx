@@ -12,16 +12,19 @@ const Spinner = ({ isSpinning, pieHeight }) => {
     if (isSpinning) {
       const minDegrees = 1080;
       const maxDegrees = 7000;
+
       const randomRotation =
-        Math.random() * (maxDegrees - minDegrees) + minDegrees;
-      setRotation(randomRotation);
+        Math.floor(Math.random() * (maxDegrees - minDegrees + 1)) + minDegrees;
+      const degreesRemainder = randomRotation % 36; 
+      const adjustedRotation = randomRotation - degreesRemainder;
+
+      setRotation(adjustedRotation);
     } else {
       setRotation(0);
     }
   }, [isSpinning]);
   const handleChartClick = (event, elements) => {
     if (elements[0]) {
-      // Jeśli istnieje wybrany element, wyświetl jego dane w konsoli
       const dataIndex = elements[0].index;
       console.log("Clicked Element Data:", state.labels[dataIndex]);
     }

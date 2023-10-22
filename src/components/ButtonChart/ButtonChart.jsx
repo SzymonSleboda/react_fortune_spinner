@@ -6,7 +6,7 @@ const ButtonChart = ({ onChartButtonClick }) => {
   };
   return (
     <div className={s.button} onClick={handleButtonClick}>
-      <span className={s.buttonText}>Naciśnij tu!</span>
+      <span className={s.buttonText}>Click here!</span>
     </div>
   );
 };
