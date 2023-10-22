@@ -69,7 +69,7 @@ const Spinner = ({ isSpinning, pieHeight, onChartClick }) => {
     elements: {
       arc: {
         borderColor: "black",
-        borderWidth: 1,
+        borderWidth: 2,
       },
     },
     animation: {
