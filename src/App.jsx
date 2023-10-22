@@ -5,10 +5,17 @@ import Button from "./components/Button/Button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Container from "./components/Container/Container";
+import ButtonChart from "./components/ButtonChart/ButtonChart";
 
 export const App = () => {
   const [isSpinning, setIsSpinning] = useState(false);
+  const [containerHeight, setContainerHeight] = useState("75vh");
 
+  const handleChartButtonClick = () => {
+    setIsSpinning(false);
+    setContainerHeight("75vh");
+    notify();
+  };
   const notify = () =>
     toast("Placeholder", {
       position: "top-center",
@@ -23,19 +30,17 @@ export const App = () => {
 
   const startSpin = () => {
     setIsSpinning(true);
-    setTimeout(() => {
-      setIsSpinning(false);
-      if (!isSpinning) {
-        notify();
-      }
-    }, 10000);
+    setContainerHeight("90vh");
   };
 
   return (
     <div>
       <Container>
-        <Spinner isSpinning={isSpinning} />
-        <Button startSpin={startSpin} />
+        <Spinner isSpinning={isSpinning} pieHeight={containerHeight} />
+        {isSpinning ? (
+          <ButtonChart onChartButtonClick={handleChartButtonClick} />
+        ) : null}
+        {!isSpinning ? <Button startSpin={startSpin} /> : null}
       </Container>
       <ToastContainer />
     </div>

@@ -5,8 +5,9 @@ import s from "./Spinner.module.css";
 
 Chart.register(ArcElement, Tooltip, CategoryScale);
 
-const Spinner = ({ isSpinning }) => {
+const Spinner = ({ isSpinning, pieHeight }) => {
   const [rotation, setRotation] = useState(0);
+
   useEffect(() => {
     if (isSpinning) {
       const minDegrees = 1080;
@@ -68,13 +69,21 @@ const Spinner = ({ isSpinning }) => {
     },
     animation: {
       duration: 1500,
-      easing: "easeInOutCubic",
+      // easing: "easeInOutCubic",
     },
     onClick: handleChartClick,
+    // plugins: {
+    //   legend: {
+    //     display: false, // Ukryj etykiety
+    //   },
+    //   tooltip: {
+    //     enabled: false, // Wyłącz tooltip
+    //   },
+    // },
   };
 
   return (
-    <div className={s.container}>
+    <div className={s.container} style={{ height: pieHeight }}>
       <Pie
         className={`${s.pie} ${isSpinning ? s.spinning : ""}`}
         options={{
