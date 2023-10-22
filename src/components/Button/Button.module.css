@@ -116,8 +116,8 @@ button:focus::after {
     opacity: 1;
   }
   100% {
-    width: 400px;
-    height: 200px;
+    width: 420px;
+    height: 180px;
     opacity: 0;
   }
 }
