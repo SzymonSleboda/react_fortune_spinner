@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Chart, ArcElement, Tooltip, CategoryScale } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import s from "./Spinner.module.css";
+import labelCategories from "../../data/labelCategories";
 
 Chart.register(ArcElement, Tooltip, CategoryScale);
 
@@ -32,18 +33,7 @@ const Spinner = ({ isSpinning, pieHeight, onChartClick }) => {
     }
   };
   const state = {
-    labels: [
-      "Option 1",
-      "Option 2",
-      "Option 3",
-      "Option 4",
-      "Option 5",
-      "Option 6",
-      "Option 7",
-      "Option 8",
-      "Option 9",
-      "Option 10",
-    ],
+    labels: labelCategories.map((category) => category.label),
     datasets: [
       {
         backgroundColor: [
