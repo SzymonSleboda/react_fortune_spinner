@@ -1,13 +1,13 @@
 const labelCategories = [
-  { label: ".docx" },
-  { label: ".pdf" },
-  { label: ".mp3" },
-  { label: ".psd" },
-  { label: ".pdf" },
-  { label: ".place" },
-  { label: ".hol" },
-  { label: ".der" },
-  { label: ".ffff" },
-  { label: ".eeee" },
+  { label: "Placeholder 1" },
+  { label: "Placeholder 2" },
+  { label: "Placeholder 3" },
+  { label: "Placeholder 4" },
+  { label: "Placeholder 5" },
+  { label: "Placeholder 6" },
+  { label: "Placeholder 7" },
+  { label: "Placeholder 8" },
+  { label: "Placeholder 9" },
+  { label: "Placeholder 10" },
 ];
 export default labelCategories;
