@@ -87,9 +87,10 @@
   /* background-color: white;
   opacity: 0.5; */
   @media screen and (min-width: 480px) {
-    width: 30vw;
+    width: 40vw;
   }
   @media screen and (min-width: 768px) {
+    width: 30vw;
   }
   @media screen and (min-width: 1600px) {
     width: 20vw;
@@ -100,6 +101,9 @@
   transform: translateX(0);
   transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
   @media screen and (min-width: 480px) {
+    transform: translateX(60vw);
+  }
+  @media screen and (min-width: 768px) {
     transform: translateX(70vw);
   }
   @media screen and (min-width: 1600px) {
