@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Modal.module.css";
 import Icon from "../../data/icons.svg";
+import Data from "../../data/labelCategories";
 
 const Modal = ({ handleOpen, handleClose, isOpen }) => {
   const handleIsOpen = () => {
@@ -24,12 +25,16 @@ const Modal = ({ handleOpen, handleClose, isOpen }) => {
             <use href={Icon + "#icon-close-icon"}></use>
           </svg>
         </button>
+
         <ul>
-          <li>Category 1</li>
-          <li>Category 2</li>
-          <li>Category 3</li>
-          <li>Category 4</li>
-          <li>Category 5</li>
+          <li>
+            <h2>Categories:</h2>
+          </li>
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+          <li>Option 4</li>
+          <li>Option 5</li>
         </ul>
       </div>
     </div>
@@ -37,3 +42,14 @@ const Modal = ({ handleOpen, handleClose, isOpen }) => {
 };
 
 export default Modal;
+// {Data.map((category, index) => (
+//   <div key={index}>
+//     <h2>{Object.keys(category)[0]}</h2>
+//     <ul>
+//       {category[Object.keys(category)[0]].map((item, i) => (
+//         <li key={i}>{item.label}</li>
+//       ))}
+//     </ul>
+//   </div>
+// ))}
+// render danych
