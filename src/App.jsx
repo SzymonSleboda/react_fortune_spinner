@@ -16,7 +16,7 @@ export const App = () => {
   const [isSpinFinished, setIsSpinFinished] = useState(false);
   const [containerHeight, setContainerHeight] = useState("75vh");
   const [isOpen, setIsOpen] = useState(false);
-  const [dataset, setDataset] = useState([]);
+  const [dataset, setDataset] = useState(0);
   const handleOpen = () => {
     setIsOpen(true);
   };
@@ -65,7 +65,7 @@ export const App = () => {
     }, 3000);
   };
   const handleChartClick = (data) => {
-    if (isSpinning) {
+    if (isSpinning && !(dataset === 0)) {
       toast(`You selected: ${data}`, {
         position: "top-center",
         autoClose: 5000,
@@ -77,6 +77,17 @@ export const App = () => {
         theme: "dark",
       });
       setIsCategorySelected(true);
+    } else if (isSpinning && dataset === 0) {
+      toast(`Please choose category!`, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     } else {
       return null;
     }
