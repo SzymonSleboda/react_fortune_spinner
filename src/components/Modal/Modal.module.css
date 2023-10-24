@@ -1,0 +1,108 @@
+.menu_open {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  top: 5vh;
+  right: 5vw;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  width: 10vw;
+  height: 10vw;
+  @media screen and (min-width: 1024px) {
+    width: 7vw;
+    height: 7vw;
+  }
+  @media screen and (min-width: 1600px) {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+.menu_close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  width: 5vw;
+  height: 5vw;
+  @media screen and (min-width: 1024px) {
+    width: 2vw;
+    height: 2vw;
+  }
+}
+.svg_open {
+  fill: #9b96ef;
+  width: 100%;
+  height: 100%;
+  transition-duration: 250ms;
+  &:hover {
+    fill: white;
+  }
+}
+.svg_close {
+  fill: #c5c2f6;
+  width: 100%;
+  height: 100%;
+  transition-duration: 250ms;
+  &:hover {
+    fill: white;
+  }
+}
+.svg_open.is_hidden {
+  transition-duration: 250ms;
+  fill: #ffffff00;
+}
+.menu_toggle:focus svg {
+  fill: white;
+  transition-duration: 250ms;
+}
+.menu_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 60px 0px 0px 0px;
+  z-index: 999;
+  transform: translateX(100vw);
+  transition: transform 250ms ease-in-out;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  background-color: #9b96ef;
+  /* background-color: white;
+  opacity: 0.5; */
+  @media screen and (min-width: 480px) {
+    width: 30vw;
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1600px) {
+    width: 20vw;
+  }
+}
+
+.menu_container.is_open {
+  transform: translateX(0);
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+  @media screen and (min-width: 480px) {
+    transform: translateX(70vw);
+  }
+  @media screen and (min-width: 1600px) {
+    transform: translateX(80vw);
+  }
+}

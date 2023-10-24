@@ -7,12 +7,21 @@ import Container from "./components/Container/Container";
 import ButtonChart from "./components/ButtonChart/ButtonChart";
 import ResetButton from "./components/ResetButton/ResetButton";
 import ReactConfetti from "react-confetti";
+import Modal from "./components/Modal/Modal";
 
 export const App = () => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [isCategorySelected, setIsCategorySelected] = useState(false);
   const [isSpinFinished, setIsSpinFinished] = useState(false);
   const [containerHeight, setContainerHeight] = useState("75vh");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+  const handleClose = () => {
+    setIsOpen(false);
+  };
   const handleResetButtonClick = () => {
     setIsSpinning(false);
     setIsSpinFinished(false);
@@ -60,7 +69,13 @@ export const App = () => {
         {isSpinning ? (
           <ResetButton onResetButtonClick={handleResetButtonClick} />
         ) : null}
+        <Modal
+          isOpen={isOpen}
+          handleOpen={handleOpen}
+          handleClose={handleClose}
+        />
       </Container>
+
       <ToastContainer />
     </div>
   );
