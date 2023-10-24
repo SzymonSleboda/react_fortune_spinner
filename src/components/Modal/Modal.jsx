@@ -1,17 +1,25 @@
 import React from "react";
 import s from "./Modal.module.css";
 import Icon from "../../data/icons.svg";
+import Data from "../../data/labelCategories";
 
 const Modal = ({
   handleOpen,
   handleClose,
   isOpen,
-  handleFood,
-  handleFunTimeDay,
-  handleFunTimeEvening,
-  handleRestaurants,
-  handleSurprise,
+  handleFirst,
+  handleSecond,
+  handleThird,
+  handleFourth,
+  handleFifth,
 }) => {
+  const categoriesArray = () => {
+    const array = Data.map((item) => item.category);
+    return array;
+  };
+
+  const currentArray = categoriesArray();
+
   return (
     <div>
       {isOpen && <div className={s.overlay} onClick={handleClose}></div>}
@@ -26,16 +34,15 @@ const Modal = ({
             <use href={Icon + "#icon-close-icon"}></use>
           </svg>
         </button>
-
         <ul>
           <li>
             <h2>Categories:</h2>
           </li>
-          <li onClick={handleFood}>Food</li>
-          <li onClick={handleFunTimeDay}>Fun Time Day</li>
-          <li onClick={handleFunTimeEvening}>Fun Time Evening</li>
-          <li onClick={handleRestaurants}>Restaurants</li>
-          <li onClick={handleSurprise}>Surprise Me!</li>
+          <li onClick={handleFirst}>{currentArray[0]}</li>
+          <li onClick={handleSecond}>{currentArray[1]}</li>
+          <li onClick={handleThird}>{currentArray[2]}</li>
+          <li onClick={handleFourth}>{currentArray[3]}</li>
+          <li onClick={handleFifth}>{currentArray[4]}</li>
         </ul>
       </div>
     </div>
@@ -43,14 +50,11 @@ const Modal = ({
 };
 
 export default Modal;
-// {Data.map((category, index) => (
-//   <div key={index}>
-//     <h2>{Object.keys(category)[0]}</h2>
-//     <ul>
-//       {category[Object.keys(category)[0]].map((item, i) => (
-//         <li key={i}>{item.label}</li>
-//       ))}
-//     </ul>
-//   </div>
-// ))}
-// render danych
+
+// {categoriesArray().map((item) => {
+//   return (
+//     <li onClick={() => onCategoryClick(item)} key={item}>
+//       {item}
+//     </li>
+//   );
+// })}

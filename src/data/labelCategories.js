@@ -1,6 +1,7 @@
 const labelCategories = [
   {
-    Food: [
+    category: "Food",
+    labels: [
       { label: "Food 1" },
       { label: "Food 2" },
       { label: "Food 3" },
@@ -12,7 +13,10 @@ const labelCategories = [
       { label: "Food 9" },
       { label: "Food 10" },
     ],
-    FunTimeDay: [
+  },
+  {
+    category: "Fun Time Day",
+    labels: [
       { label: "FunTimeDay 1" },
       { label: "FunTimeDay 2" },
       { label: "FunTimeDay 3" },
@@ -24,7 +28,10 @@ const labelCategories = [
       { label: "FunTimeDay 9" },
       { label: "FunTimeDay 10" },
     ],
-    FunTimeEvening: [
+  },
+  {
+    category: "Fun Time Evening",
+    labels: [
       { label: "FunTimeEvening 1" },
       { label: "FunTimeEvening 2" },
       { label: "FunTimeEvening 3" },
@@ -36,7 +43,10 @@ const labelCategories = [
       { label: "FunTimeEvening 9" },
       { label: "FunTimeEvening 10" },
     ],
-    PlacesToEat: [
+  },
+  {
+    category: "Places To Eat",
+    labels: [
       { label: "PlacesToEat 1" },
       { label: "PlacesToEat 2" },
       { label: "PlacesToEat 3" },
@@ -48,18 +58,22 @@ const labelCategories = [
       { label: "PlacesToEat 9" },
       { label: "PlacesToEat 10" },
     ],
-    SupriseMe: [
-      { label: "SupriseMe 1" },
-      { label: "SupriseMe 2" },
-      { label: "SupriseMe 3" },
-      { label: "SupriseMe 4" },
-      { label: "SupriseMe 5" },
-      { label: "SupriseMe 6" },
-      { label: "SupriseMe 7" },
-      { label: "SupriseMe 8" },
-      { label: "SupriseMe 9" },
-      { label: "SupriseMe 10" },
+  },
+  {
+    category: "Surprise Me",
+    labels: [
+      { label: "SurpriseMe 1" },
+      { label: "SurpriseMe 2" },
+      { label: "SurpriseMe 3" },
+      { label: "SurpriseMe 4" },
+      { label: "SurpriseMe 5" },
+      { label: "SurpriseMe 6" },
+      { label: "SurpriseMe 7" },
+      { label: "SurpriseMe 8" },
+      { label: "SurpriseMe 9" },
+      { label: "SurpriseMe 10" },
     ],
   },
 ];
+
 export default labelCategories;

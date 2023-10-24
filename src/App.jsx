@@ -8,6 +8,7 @@ import ButtonChart from "./components/ButtonChart/ButtonChart";
 import ResetButton from "./components/ResetButton/ResetButton";
 import ReactConfetti from "react-confetti";
 import Modal from "./components/Modal/Modal";
+import Data from "./data/labelCategories";
 
 export const App = () => {
   const [isSpinning, setIsSpinning] = useState(false);
@@ -15,13 +16,40 @@ export const App = () => {
   const [isSpinFinished, setIsSpinFinished] = useState(false);
   const [containerHeight, setContainerHeight] = useState("75vh");
   const [isOpen, setIsOpen] = useState(false);
-
+  const [dataset, setDataset] = useState([]);
   const handleOpen = () => {
     setIsOpen(true);
   };
   const handleClose = () => {
     setIsOpen(false);
   };
+  const handleFirst = () => {
+    const options = Data[0].labels;
+    const labelArray = options.map((item) => item.label);
+    setDataset(labelArray);
+  };
+
+  const handleSecond = () => {
+    const options = Data[1].labels;
+    const labelArray = options.map((item) => item.label);
+    setDataset(labelArray);
+  };
+  const handleThird = () => {
+    const options = Data[2].labels;
+    const labelArray = options.map((item) => item.label);
+    setDataset(labelArray);
+  };
+  const handleFourth = () => {
+    const options = Data[3].labels;
+    const labelArray = options.map((item) => item.label);
+    setDataset(labelArray);
+  };
+  const handleFifth = () => {
+    const options = Data[4].labels;
+    const labelArray = options.map((item) => item.label);
+    setDataset(labelArray);
+  };
+
   const handleResetButtonClick = () => {
     setIsSpinning(false);
     setIsSpinFinished(false);
@@ -36,9 +64,9 @@ export const App = () => {
       setIsSpinFinished(true);
     }, 3000);
   };
-  const handleChartClick = (clickedData) => {
+  const handleChartClick = (data) => {
     if (isSpinning) {
-      toast(`You selected: ${clickedData}`, {
+      toast(`You selected: ${data}`, {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -63,6 +91,7 @@ export const App = () => {
           onChartClick={handleChartClick}
           isSpinning={isSpinning}
           pieHeight={containerHeight}
+          selectedLabelList={dataset}
         />
         {isSpinFinished ? <ButtonChart /> : null}
         {!isSpinning ? <Button startSpin={startSpin} /> : null}
@@ -73,9 +102,13 @@ export const App = () => {
           isOpen={isOpen}
           handleOpen={handleOpen}
           handleClose={handleClose}
+          handleFirst={handleFirst}
+          handleSecond={handleSecond}
+          handleThird={handleThird}
+          handleFourth={handleFourth}
+          handleFifth={handleFifth}
         />
       </Container>
-
       <ToastContainer />
     </div>
   );

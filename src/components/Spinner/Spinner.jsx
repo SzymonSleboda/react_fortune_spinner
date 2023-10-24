@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Chart, ArcElement, Tooltip, CategoryScale } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import s from "./Spinner.module.css";
-import labelCategories from "../../data/labelCategories";
 
 Chart.register(ArcElement, Tooltip, CategoryScale);
 
-const Spinner = ({ isSpinning, pieHeight, onChartClick }) => {
+const Spinner = ({
+  isSpinning,
+  pieHeight,
+  onChartClick,
+  selectedLabelList,
+}) => {
   const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
@@ -29,11 +33,10 @@ const Spinner = ({ isSpinning, pieHeight, onChartClick }) => {
       const dataIndex = elements[0].index;
       const data = state.labels[dataIndex];
       onChartClick(data);
-      // console.log("Clicked Element Data:", state.labels[dataIndex]);
     }
   };
   const state = {
-    labels: labelCategories.map((category) => category.label),
+    labels: selectedLabelList,
     datasets: [
       {
         backgroundColor: [
