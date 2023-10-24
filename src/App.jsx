@@ -17,37 +17,49 @@ export const App = () => {
   const [containerHeight, setContainerHeight] = useState("75vh");
   const [isOpen, setIsOpen] = useState(false);
   const [dataset, setDataset] = useState(0);
+  const [confetti, setConfetti] = useState(false);
   const handleOpen = () => {
     setIsOpen(true);
   };
   const handleClose = () => {
+    setConfetti(false);
     setIsOpen(false);
   };
-  const handleFirst = () => {
-    const options = Data[0].labels;
+  const handleCategorySelection = (categoryIndex) => {
+    setConfetti(true);
+    const options = Data[categoryIndex].labels;
     const labelArray = options.map((item) => item.label);
     setDataset(labelArray);
+    toast(`${Data[categoryIndex].category} selected!`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const handleFirst = () => {
+    handleCategorySelection(0);
   };
 
   const handleSecond = () => {
-    const options = Data[1].labels;
-    const labelArray = options.map((item) => item.label);
-    setDataset(labelArray);
+    handleCategorySelection(1);
   };
+
   const handleThird = () => {
-    const options = Data[2].labels;
-    const labelArray = options.map((item) => item.label);
-    setDataset(labelArray);
+    handleCategorySelection(2);
   };
+
   const handleFourth = () => {
-    const options = Data[3].labels;
-    const labelArray = options.map((item) => item.label);
-    setDataset(labelArray);
+    handleCategorySelection(3);
   };
+
   const handleFifth = () => {
-    const options = Data[4].labels;
-    const labelArray = options.map((item) => item.label);
-    setDataset(labelArray);
+    handleCategorySelection(4);
   };
 
   const handleResetButtonClick = () => {
@@ -94,9 +106,9 @@ export const App = () => {
   };
   return (
     <div>
-      {isCategorySelected ? (
+      {(isCategorySelected || confetti) && (
         <ReactConfetti size={8} numberOfPieces={300} gravity={0.03} />
-      ) : null}
+      )}
       <Container>
         <Spinner
           onChartClick={handleChartClick}
