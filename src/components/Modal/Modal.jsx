@@ -9,8 +9,12 @@ const Modal = ({ handleOpen, handleClose, isOpen }) => {
   const handleIsClose = () => {
     handleClose();
   };
+
   return (
     <div>
+      {isOpen && (
+        <div className={s.overlay} onClick={handleIsClose}></div>
+      )}
       <button className={s.menu_open} onClick={handleIsOpen}>
         <svg className={`${s.svg_open} ${isOpen ? s.is_hidden : ""}`}>
           <use href={Icon + "#icon-burger-icon"}></use>
