@@ -12,9 +12,7 @@ const Modal = ({ handleOpen, handleClose, isOpen }) => {
 
   return (
     <div>
-      {isOpen && (
-        <div className={s.overlay} onClick={handleIsClose}></div>
-      )}
+      {isOpen && <div className={s.overlay} onClick={handleIsClose}></div>}
       <button className={s.menu_open} onClick={handleIsOpen}>
         <svg className={`${s.svg_open} ${isOpen ? s.is_hidden : ""}`}>
           <use href={Icon + "#icon-burger-icon"}></use>
@@ -26,6 +24,13 @@ const Modal = ({ handleOpen, handleClose, isOpen }) => {
             <use href={Icon + "#icon-close-icon"}></use>
           </svg>
         </button>
+        <ul>
+          <li>Category 1</li>
+          <li>Category 2</li>
+          <li>Category 3</li>
+          <li>Category 4</li>
+          <li>Category 5</li>
+        </ul>
       </div>
     </div>
   );

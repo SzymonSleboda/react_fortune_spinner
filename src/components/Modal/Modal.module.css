@@ -116,6 +116,29 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); 
-  z-index: 998; 
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+li {
+  color: #f3f6c2;
+  font-family: "Titan One", sans-serif;
+  transition: color 250ms, font-size 0.2s;
+  padding: 2vh 0 2vh 0;
+  font-size: 35px;
+  @media screen and (min-width: 480px) {
+    font-size: calc(1.2em + 1vw);
+  }
+}
+
+li:hover {
+  cursor: pointer;
+  color: #c5c2f6;
+}
+ul {
+  list-style: none;
+  padding: 10vh 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
