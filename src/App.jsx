@@ -70,11 +70,24 @@ export const App = () => {
   };
 
   const startSpin = () => {
-    setIsSpinning(true);
-    setContainerHeight("90vh");
-    setTimeout(() => {
-      setIsSpinFinished(true);
-    }, 3000);
+    if (dataset === 0) {
+      toast(`Please choose category!`, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      setIsSpinning(true);
+      setContainerHeight("90vh");
+      setTimeout(() => {
+        setIsSpinFinished(true);
+      }, 3000);
+    }
   };
   const handleChartClick = (data) => {
     if (isSpinning && !(dataset === 0)) {
