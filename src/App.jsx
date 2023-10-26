@@ -15,7 +15,7 @@ export const App = () => {
   const [isCategorySelected, setIsCategorySelected] = useState(false);
   const [isSpinFinished, setIsSpinFinished] = useState(false);
   const [containerHeight, setContainerHeight] = useState("75vh");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [dataset, setDataset] = useState(0);
   const [confetti, setConfetti] = useState(false);
   const handleOpen = () => {
@@ -92,7 +92,7 @@ export const App = () => {
   };
   const handleChartClick = (data) => {
     if (isSpinning && !(dataset === 0)) {
-      toast(`You selected: ${data}`, {
+      toast(`${data}`, {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -120,7 +120,7 @@ export const App = () => {
   };
   return (
     <div>
-      {(isCategorySelected || confetti ) && (
+      {(isCategorySelected || confetti) && (
         <ReactConfetti size={8} numberOfPieces={400} gravity={0.04} />
       )}
       <Container>
