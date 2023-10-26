@@ -40,6 +40,7 @@ export const App = () => {
       progress: undefined,
       theme: "dark",
     });
+    handleClose();
   };
 
   const handleFirst = () => {
@@ -119,8 +120,8 @@ export const App = () => {
   };
   return (
     <div>
-      {(isCategorySelected || confetti) && (
-        <ReactConfetti size={8} numberOfPieces={300} gravity={0.03} />
+      {(isCategorySelected || confetti ) && (
+        <ReactConfetti size={8} numberOfPieces={400} gravity={0.04} />
       )}
       <Container>
         <Spinner
