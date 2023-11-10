@@ -13,6 +13,7 @@
   border-radius: 50%;
   outline: none;
   width: 10vw;
+  -webkit-tap-highlight-color: transparent;
   height: 10vw;
   @media screen and (min-width: 768px) {
     width: 7vw;
@@ -33,6 +34,7 @@
   top: 20px;
   right: 20px;
   background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   border: none;
   border-radius: 50%;
@@ -48,6 +50,7 @@
   fill: #9b96ef;
   width: 100%;
   height: 100%;
+  -webkit-tap-highlight-color: transparent;
   transition-duration: 250ms;
   &:hover {
     fill: white;
@@ -57,6 +60,7 @@
   fill: #c5c2f6;
   width: 100%;
   height: 100%;
+  -webkit-tap-highlight-color: transparent;
   transition-duration: 250ms;
   &:hover {
     fill: white;
