@@ -43,26 +43,6 @@ export const App = () => {
     handleClose();
   };
 
-  const handleFirst = () => {
-    handleCategorySelection(0);
-  };
-
-  const handleSecond = () => {
-    handleCategorySelection(1);
-  };
-
-  const handleThird = () => {
-    handleCategorySelection(2);
-  };
-
-  const handleFourth = () => {
-    handleCategorySelection(3);
-  };
-
-  const handleFifth = () => {
-    handleCategorySelection(4);
-  };
-
   const handleResetButtonClick = () => {
     setIsSpinning(false);
     setIsSpinFinished(false);
@@ -90,6 +70,7 @@ export const App = () => {
       }, 3000);
     }
   };
+
   const handleChartClick = (data) => {
     if (isSpinning && !(dataset === 0)) {
       toast(`${data}`, {
@@ -139,11 +120,7 @@ export const App = () => {
           isOpen={isOpen}
           handleOpen={handleOpen}
           handleClose={handleClose}
-          handleFirst={handleFirst}
-          handleSecond={handleSecond}
-          handleThird={handleThird}
-          handleFourth={handleFourth}
-          handleFifth={handleFifth}
+          categoryHandler={handleCategorySelection}
         />
       </Container>
       <ToastContainer />

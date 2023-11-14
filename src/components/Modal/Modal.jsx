@@ -3,21 +3,11 @@ import s from "./Modal.module.css";
 import Icon from "../../data/icons.svg";
 import Data from "../../data/labelCategories";
 
-const Modal = ({
-  handleOpen,
-  handleClose,
-  isOpen,
-  handleFirst,
-  handleSecond,
-  handleThird,
-  handleFourth,
-  handleFifth,
-}) => {
+const Modal = ({ handleOpen, handleClose, isOpen, categoryHandler }) => {
   const categoriesArray = () => {
     const array = Data.map((item) => item.category);
     return array;
   };
-
   const currentArray = categoriesArray();
 
   return (
@@ -38,11 +28,13 @@ const Modal = ({
           <li>
             <h2>Categories:</h2>
           </li>
-          <li onClick={handleFirst}>{currentArray[0]}</li>
-          <li onClick={handleSecond}>{currentArray[1]}</li>
-          <li onClick={handleThird}>{currentArray[2]}</li>
-          <li onClick={handleFourth}>{currentArray[3]}</li>
-          <li onClick={handleFifth}>{currentArray[4]}</li>
+          {currentArray.map((category, index) => {
+            return (
+              <li key={index} onClick={() => categoryHandler(index)}>
+                {category}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
@@ -50,11 +42,3 @@ const Modal = ({
 };
 
 export default Modal;
-
-// {categoriesArray().map((item) => {
-//   return (
-//     <li onClick={() => onCategoryClick(item)} key={item}>
-//       {item}
-//     </li>
-//   );
-// })}
