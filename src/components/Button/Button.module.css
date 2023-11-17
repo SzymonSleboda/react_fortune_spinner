@@ -98,7 +98,7 @@ button:focus::before {
   transform: translate(-50%, -50%);
   animation: ring_mobile 1.5s infinite;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 1024px) {
   .button::after {
     animation: ring 1.5s infinite;
   }
@@ -116,8 +116,8 @@ button:focus::after {
     opacity: 1;
   }
   100% {
-    width: 420px;
-    height: 140px;
+    width: 20vw;
+    height: 20vh;
     opacity: 0;
   }
 }
@@ -128,8 +128,8 @@ button:focus::after {
     opacity: 1;
   }
   100% {
-    width: 180px;
-    height: 120px;
+    width: 40vw;
+    height: 20vh;
     opacity: 0;
   }
 }
