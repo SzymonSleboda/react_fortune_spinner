@@ -8,6 +8,7 @@ Chart.register(ArcElement, Tooltip, CategoryScale);
 const Spinner = ({
   isSpinning,
   pieHeight,
+  pieWidth,
   onChartClick,
   selectedLabelList,
 }) => {
@@ -81,16 +82,21 @@ const Spinner = ({
   };
 
   return (
-    <div className={s.container} style={{ height: pieHeight }}>
-      <Pie
-        className={`${s.pie}`}
-        options={{
-          ...chartOptions,
-          rotation: rotation,
-        }}
-        data={state}
-      />
-      <div className={s.arrow}></div>
+    <div className={s.container_primary} style={{ height: pieHeight }}>
+      <div
+        className={s.container_secondary}
+        style={{ height: pieHeight, maxWidth: pieWidth }}
+      >
+        <Pie
+          className={`${s.pie}`}
+          options={{
+            ...chartOptions,
+            rotation: rotation,
+          }}
+          data={state}
+        />
+        <div className={s.arrow}></div>
+      </div>
     </div>
   );
 };

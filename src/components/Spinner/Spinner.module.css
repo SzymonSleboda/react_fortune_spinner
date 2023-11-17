@@ -14,14 +14,26 @@ body {
   padding: 5vh 0 5vh 0;
   background: #c5c2f6;
 }
-.container {
+.container_primary {
   width: 75vw;
   height: 75vh;
+  max-height: 90vh;
   display: flex;
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
   align-items: center;
 }
+.container_secondary {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width:75vh;
+  display: flex;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+}
+
 .pie {
   -webkit-tap-highlight-color: transparent;
   &:hover {
@@ -40,7 +52,7 @@ body {
 
 .arrow {
   position: absolute;
-  right: 10%;
+  right: 0;
   -webkit-tap-highlight-color: transparent;
   width: 5px;
   height: 5px;
@@ -65,7 +77,7 @@ body {
     border-bottom: 10px solid transparent;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .arrow {
     width: 10px;
     height: 10px;
@@ -74,36 +86,7 @@ body {
     border-bottom: 30px solid transparent;
   }
 }
-@media screen and (min-width: 1200px) {
-  .arrow {
-    right: 12%;
-    border-right: 150px solid #500010;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .arrow {
-    right: 16%;
-    border-right: 150px solid #500010;
-  }
-}
-@media screen and (min-width: 1600px) {
-  .arrow {
-    right: 20%;
-    border-right: 200px solid #500010;
-  }
-}
-@media screen and (min-width: 1800px) {
-  .arrow {
-    right: 23%;
-    border-right: 200px solid #500010;
-  }
-}
-@media screen and (min-width: 2000px) {
-  .arrow {
-    right: 27%;
-    border-right: 200px solid #500010;
-  }
-}
+
 @-webkit-keyframes shake-right {
   0%,
   100% {
