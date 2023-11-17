@@ -19,6 +19,7 @@ export const App = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [dataset, setDataset] = useState(0);
   const [confetti, setConfetti] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(null);
   const handleOpen = () => {
     setIsOpen(true);
   };
@@ -50,6 +51,7 @@ export const App = () => {
     setIsCategorySelected(false);
     setContainerHeight("75vh");
     setMaxContainerWidth("75vh");
+    clearTimeout(timeoutId);
   };
 
   const startSpin = () => {
@@ -68,9 +70,10 @@ export const App = () => {
       setIsSpinning(true);
       setContainerHeight("90vh");
       setMaxContainerWidth("90vh");
-      setTimeout(() => {
+      const id = setTimeout(() => {
         setIsSpinFinished(true);
       }, 3000);
+      setTimeoutId(id);
     }
   };
 
