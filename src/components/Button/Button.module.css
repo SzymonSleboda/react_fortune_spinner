@@ -121,6 +121,7 @@ button:focus::after {
     opacity: 0;
   }
 }
+/*  */
 @keyframes ring_mobile {
   0% {
     width: 30px;
