@@ -85,7 +85,7 @@ const Spinner = ({
     <div className={s.container_primary} style={{ height: pieHeight }}>
       <div
         className={s.container_secondary}
-        style={{ height: pieHeight, maxWidth: pieWidth }}
+        style={{ height: pieHeight}}
       >
         <Pie
           className={`${s.pie}`}
