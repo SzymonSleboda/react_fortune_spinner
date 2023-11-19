@@ -49,8 +49,8 @@ export const App = () => {
     setIsSpinning(false);
     setIsSpinFinished(false);
     setIsCategorySelected(false);
-    setContainerHeight("75vh");
-    setMaxContainerWidth("75vh");
+    setContainerHeight("75dvh");
+    setMaxContainerWidth("75dvh");
     clearTimeout(timeoutId);
   };
 
