@@ -69,7 +69,7 @@ export const App = () => {
     } else {
       setIsSpinning(true);
       setContainerHeight("90vh");
-      setMaxContainerWidth("90vh");
+      setMaxContainerWidth("100vh");
       const id = setTimeout(() => {
         setIsSpinFinished(true);
       }, 3000);
