@@ -83,6 +83,10 @@ const Spinner = ({
 
   return (
     <div className={s.container_primary} style={{ height: pieHeight }}>
+      <div
+        className={s.container_secondary}
+        style={{ height: pieHeight, maxWidth: pieWidth }}
+      >
         <Pie
           className={`${s.pie}`}
           options={{
@@ -93,6 +97,7 @@ const Spinner = ({
         />
         <div className={s.arrow}></div>
       </div>
+    </div>
   );
 };
 

@@ -15,6 +15,7 @@ export const App = () => {
   const [isCategorySelected, setIsCategorySelected] = useState(false);
   const [isSpinFinished, setIsSpinFinished] = useState(false);
   const [containerHeight, setContainerHeight] = useState("75vh");
+  const [maxContainerWidth, setMaxContainerWidth] = useState("75vh");
   const [isOpen, setIsOpen] = useState(true);
   const [dataset, setDataset] = useState(0);
   const [confetti, setConfetti] = useState(false);
@@ -49,6 +50,7 @@ export const App = () => {
     setIsSpinFinished(false);
     setIsCategorySelected(false);
     setContainerHeight("75vh");
+    setMaxContainerWidth("75vh");
     clearTimeout(timeoutId);
   };
 
@@ -67,6 +69,7 @@ export const App = () => {
     } else {
       setIsSpinning(true);
       setContainerHeight("90vh");
+      setMaxContainerWidth("90vh");
       const id = setTimeout(() => {
         setIsSpinFinished(true);
       }, 3000);
@@ -112,6 +115,7 @@ export const App = () => {
           onChartClick={handleChartClick}
           isSpinning={isSpinning}
           pieHeight={containerHeight}
+          pieWidth={maxContainerWidth}
           selectedLabelList={dataset}
         />
         {isSpinFinished ? <ButtonChart /> : null}
