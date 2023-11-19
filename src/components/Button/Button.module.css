@@ -117,11 +117,10 @@ button:focus::after {
   }
   100% {
     width: 20vw;
-    height: 20vh;
+    height: 15vh;
     opacity: 0;
   }
 }
-/*  */
 @keyframes ring_mobile {
   0% {
     width: 30px;
@@ -130,7 +129,7 @@ button:focus::after {
   }
   100% {
     width: 40vw;
-    height: 20vh;
+    height: 15vh;
     opacity: 0;
   }
 }
