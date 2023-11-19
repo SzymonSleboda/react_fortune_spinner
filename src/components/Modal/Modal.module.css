@@ -5,7 +5,7 @@
   justify-content: center;
   margin: 0;
   padding: 0;
-  top: 5vh;
+  top: 5dvh;
   right: 5vw;
   background-color: transparent;
   cursor: pointer;
@@ -79,7 +79,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   padding: 60px 0px 0px 0px;
   z-index: 999;
   transform: translateX(100vw);
@@ -117,7 +117,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
 }
@@ -126,7 +126,7 @@ li {
   font-family: "Titan One", sans-serif;
   transition: color 250ms, font-size 0.2s;
   -webkit-tap-highlight-color: transparent;
-  padding: 2vh 0 2vh 0;
+  padding: 2dvh 0 2dvh 0;
   font-size: 35px;
   @media screen and (min-width: 480px) {
     font-size: calc(0.9em + 1vw);

@@ -9,7 +9,7 @@
   justify-content: center;
   width: 10vw;
   -webkit-tap-highlight-color: transparent;
-  height: 3vh;
+  height: 3dvh;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 400;
@@ -23,7 +23,7 @@
 }
 @media screen and (min-width: 768px) {
   .button {
-    height: 5vh;
+    height: 5dvh;
   }
 }
 @media screen and (min-width: 1600px) {

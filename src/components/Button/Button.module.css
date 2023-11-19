@@ -3,13 +3,13 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 5vh;
+  margin-top: 5dvh;
 }
 
 .button {
   width: 30vw;
   -webkit-tap-highlight-color: transparent;
-  height: 10vh;
+  height: 10dvh;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 700;
@@ -117,7 +117,7 @@ button:focus::after {
   }
   100% {
     width: 20vw;
-    height: 15vh;
+    height: 15dvh;
     opacity: 0;
   }
 }
@@ -129,7 +129,7 @@ button:focus::after {
   }
   100% {
     width: 40vw;
-    height: 15vh;
+    height: 15dvh;
     opacity: 0;
   }
 }
