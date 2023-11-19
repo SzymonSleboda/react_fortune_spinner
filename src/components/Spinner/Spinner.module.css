@@ -11,7 +11,7 @@
 }
 body {
   margin: 0;
-  padding: 0;
+  padding: 5vh 0 5vh 0;
   background: #c5c2f6;
 }
 .container_primary {
